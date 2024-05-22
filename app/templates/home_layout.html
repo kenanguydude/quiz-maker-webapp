@@ -9,6 +9,14 @@
 </head>
 <body>
     <div class="page_container">
+        <div class="welcome">
+            <nav>
+                {% include 'home_nav.html' %}
+            </nav>
+            <div class="welcome_text">
+                {% include 'welcome.html' %}
+            </div>
+        </div>
         <div class="page_content">
             <main>
                 {% block content %}{% endblock %} <!-- content of the page; loads templates -->

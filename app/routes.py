@@ -3,7 +3,8 @@ import sqlite3
 
 app = Flask(__name__)
 
-conn = sqlite3.connect('database/quizmaker.db')
+# connect to database
+conn = sqlite3.connect('database/quiz.db')
 cur = conn.cursor()
 
 # routes
@@ -13,6 +14,12 @@ cur = conn.cursor()
 def home():
     """The page it brings you to when you open the website."""
     return render_template("home.html")
+
+
+@app.route("/quizzes")
+def quizzes():
+    """Where you can take and make a quiz."""
+    return render_template("quizzes.html")
 
 
 if __name__ == "__main__":
